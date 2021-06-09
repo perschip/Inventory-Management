@@ -20,7 +20,6 @@ if(isset($_GET['error']) && $_GET['error'] == 1) { ?>
 ?>
 
 
-
 <div class="container">
     <form action="new_user.php" method="POST" style="width:50%; display:inline-block; padding-top:5%">
     <div class="form-group">

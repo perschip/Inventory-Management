@@ -23,8 +23,6 @@ if (empty( $_GET[ 'id' ])) {
         Header( 'Location: buildings.php?error=3&id=' .$id);
       }
 
-
-
 }
 
 ?>

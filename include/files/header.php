@@ -5,8 +5,6 @@ session_start();
 
 $cookie_name = 'users';
 
-
-
 //Checks to see if cookie is set
 if(!isset($_COOKIE[$cookie_name])) {
     Header( 'Location: login.php?failed=3' );

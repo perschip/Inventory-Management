@@ -10,7 +10,7 @@
 <body>
 <div class="content">
   <div class="logo">
-    <h1 style="color: mediumslateblue;">Monroe Township</h1>
+	  <h1 style="color: mediumslateblue;">Monroe Township</h1>
     <h1 style="color: goldenrod;">Technology Department</h1>
 	<br>
   </div>

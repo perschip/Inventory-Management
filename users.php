@@ -1,6 +1,6 @@
 <?php
 
-$page_title = "Users";
+$page_title = "Technology Users";
 $cookie_name = 'users';
 
 $email = $_COOKIE[$cookie_name];

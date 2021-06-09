@@ -23,9 +23,6 @@ if (empty( $_GET[ 'id' ])) {
       else {
         Header( 'Location: users.php?error=3&id=' .$id);
       }
-
-
-
 }
 
 ?>
