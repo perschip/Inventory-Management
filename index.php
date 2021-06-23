@@ -116,6 +116,26 @@ include('include/files/header.php');
         ?>
       </div>
     </div>
+    <div class="col">
+      <div class="buildings">
+      Total District Buildings <br>
+        <?php
+        $buildings = "SELECT * FROM buildings";
+
+        $buildingresult = mysqli_query( $conn, $buildings );
+
+        if ( $buildingresult ) {
+          // it return number of rows in the table. 
+          $row = mysqli_num_rows( $buildingresult );
+
+          printf( $row );
+
+          // close the result. 
+          mysqli_free_result( $buildingresult );
+        }
+        ?>
+      </div>
+    </div>
   </div>
 </div>
 
