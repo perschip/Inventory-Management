@@ -103,7 +103,7 @@ if(isset($_GET['error']) && $_GET['error'] == 1) { ?>
                 <?php 
                     }
                 ?>
-                <td><a href="editUser.php?id=<?php echo $id?>"><button type=submit>Edit</button></a> <a href="deleteUser.php?id=<?php echo $id?>"><button type=submit>Delete</button></a></td>	
+                <td><a href="edit_user.php?id=<?php echo $id?>"><button type=submit>Edit</button></a> <a href="deleteUser.php?id=<?php echo $id?>"><button type=submit>Delete</button></a></td>	
             </tr>  
         <?php  
             };  

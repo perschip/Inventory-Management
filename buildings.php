@@ -47,7 +47,14 @@ if(isset($_GET['error']) && $_GET['error'] == 1) { ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php
+   } elseif(isset($_GET['success']) && $_GET['success'] == 2) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> Building Has been added.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php
     }
+
 ?>
 
 <table class="table table-secondary table-striped">

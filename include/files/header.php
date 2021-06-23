@@ -57,7 +57,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                     </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                             <li><a class="dropdown-item" href="inventory.php">Show Inventory</a></li>
-                            <li><a class="dropdown-item" href="#">Add Inventory</a></li>
+                            <li><a class="dropdown-item" href="addinventory.php">Add Inventory</a></li>
                         </ul>
                 </div>
 
