@@ -69,9 +69,8 @@ if(isset($_GET['error']) && $_GET['error'] == 1) { ?>
             <th style="color:black; text-align:center">Device Model</th>
             <th style="color:black; text-align:center">Device Serial</th>
             <th style="color:black; text-align:center">Device Location</th>
-            <th style="color:black; text-align:center">Device Status</th>
             <?php
-                if($permission_level == 3 or $permission_level == 4) { ?>
+                if($permission_level == 2 or $permission_level == 3 or $permission_level == 4) { ?>
                     <th style="color:black; text-align:center">Edit Device</th>
                     
                 <?php } ?>
@@ -94,18 +93,10 @@ if(isset($_GET['error']) && $_GET['error'] == 1) { ?>
                 <td><?php echo $row["DEVICE_MODEL"]; ?></td>
                 <td><?php echo $row["DEVICE_SERIAL"]; ?></td>
                 <td><?php echo $row["DEVICE_LOCATION"]; ?></td>
-                <td><?php 
-                    //Pings Device IP address from table
-                    exec("ping -n 2 -w 2 " . $ip, $output, $results);
-
-                    //Checks if Ping returns a value or not
-                    if ($results == 0) { 
-                       echo "Online";
-                      }  else { 
-                        echo "Offline";
-                      }
-                ?></td>
-                <td><a href="editInventory.php?id=<?php echo $id?>"><button type=submit>Edit</button></a> <a href="deleteInventory.php?id=<?php echo $id?>"><button type=submit>Delete</button></a></td>	
+                <?php
+                if($permission_level == 2 or $permission_level == 3 or $permission_level == 4) { ?>
+                <td><a href="edit_inventory.php?id=<?php echo $id?>"><button type=submit>Edit</button></a> <a href="deleteInventory.php?id=<?php echo $id?>"><button type=submit>Delete</button></a></td>	
+                <?php } ?>
             </tr>  
         <?php  
             };  

@@ -6,11 +6,16 @@ $cookie_name = 'users';
 $email = $_COOKIE[$cookie_name];
 
 require('include/files/header.php');
+require("include/files/dbconnect.php");
+
+$idGlobal = $_GET['id'];
 
 
 if (!empty($_GET['id'])) {
 	
-	$query = "SELECT * FROM users WHERE ID='" . $_GET['id'] ."'";
+	echo $_GET['id'];
+	
+	$query = "SELECT * FROM users WHERE ID='$idGlobal'";
 	$result = mysqli_query( $conn, $query );
     $row = mysqli_fetch_assoc($result);
 	
@@ -23,8 +28,18 @@ if (!empty($_GET['id'])) {
     $email = $_POST[ 'email' ];
     $permLvl = $_POST['perm'];
 	$side = $_POST[ 'side' ];
+		
+				echo $id;
+		echo $first_name;
+		echo $last_name;
+		echo $email;
+		echo $permLvl;
+		echo $side;
+		
+		
+$sql = "UPDATE users SET FIRST_NAME='$first_name', LAST_NAME='$last_name', EMAIL='$email'. PERMISSION_LEVEL='$permLvl', SCHOOL='$side' WHERE ID='$id'";
 	
-	$sql = "UPDATE users SET FIRST_NAME='" . $first_name . "', LAST_NAME='" . $last_name . "', EMAIL='" . $email . "', PERMISSION_LEVEL='" . $permLvl . "', SCHOOL='" .$side . "' WHERE ID='" . $id . "'";
+	//$sql = "UPDATE users SET FIRST_NAME='" . $first_name . "', LAST_NAME='" . $last_name . "', EMAIL='" . $email . "', PERMISSION_LEVEL='" . $permLvl . "', SCHOOL='" .$side . "' WHERE ID='" . $id . "'";
 		
 		 if (mysqli_query( $conn, $sql ) ) {
 			 header( "Location: users.php" );
@@ -35,12 +50,13 @@ if (!empty($_GET['id'])) {
 	}
 }
 
+
 ?>
 
 <div class="container">
-    <form action="edit_user.php?id=<?php echo $row['ID']?>" method="POST" style="width:50%; display:inline-block; padding-top:5%">
+    <form action="edit_user.php?id=<?php echo $_GET['id']?>" method="POST" style="width:50%; display:inline-block; padding-top:5%">
     <div class="form-group">
-        <label for='userID'>ID</label>
+        <label for="userID">ID</label>
         <input type="number" class="form-control" name="userID" id="userID" value=<?php echo $row['ID'] ; ?> readonly>
     </div>
     <div class="form-group">
@@ -77,9 +93,6 @@ if (!empty($_GET['id'])) {
         <button type="submit" class="btn2" name="update" id="update" style="display:inline-block;">Updat User</button>
     </form>
 </div>
-
-
-
 
 <?php
 

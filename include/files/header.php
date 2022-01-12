@@ -9,6 +9,11 @@ $cookie_name = 'users';
 if(!isset($_COOKIE[$cookie_name])) {
     Header( 'Location: login.php?failed=3' );
 } 
+
+$permission_result =  mysqli_query($conn, "SELECT PERMISSION_LEVEL FROM users WHERE EMAIL = '$_COOKIE[$cookie_name]' ");
+$permission_row = $permission_result->fetch_assoc();
+
+$permission_level = (int) $permission_row['PERMISSION_LEVEL'];
 ?>
 
 <!doctype html>
@@ -94,7 +99,11 @@ if(!isset($_COOKIE[$cookie_name])) {
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                         <li><a class="dropdown-item" href="users.php">Show Users</a></li>
+                        <?php
+                             if($permission_level == 3 or $permission_level == 4) { ?>
                         <li><a class="dropdown-item" href="adduser.php">Add Users</a></li>
+
+                        <?php } ?>
                     </ul>
                 </div>
 

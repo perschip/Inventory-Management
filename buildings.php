@@ -87,7 +87,7 @@ if(isset($_GET['error']) && $_GET['error'] == 1) { ?>
 				<td><?php echo $row["CITY"]; ?></td>
                 <td><?php echo $row["STATE"]; ?></td>
                 <td><?php echo $row["ZIPCODE"]; ?></td>
-                <td><a href="editBuilding.php?id=<?php echo $id?>"><button type=submit>Edit</button></a> <a href="deleteBuilding.php?id=<?php echo $id?>"><button type=submit>Delete</button></a></td>	
+                <td><a href="edit_building.php?id=<?php echo $id?>"><button type=submit>Edit</button></a> <a href="deleteBuilding.php?id=<?php echo $id?>"><button type=submit>Delete</button></a></td>	
             </tr>  
         <?php  
             };  

@@ -46,6 +46,7 @@ if(isset($_GET['error']) && $_GET['error'] == 1) { ?>
         <label for="permLvl">Position</label>
         <select class="form-select" aria-label="Select User Position" name="permLvl" id="permLvl">
             <option selected>Select Permission Level</option>
+            <option value="1">Part Time</option>
             <option value="2">Workstation Specialist</option>
             <option value="3">Network Operations Manager</option>
             <option value="4">Director of Information Technology</option>

@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //Email & Password from Form
         $email = mysqli_real_escape_string($conn,$_POST['email']);
-        $password = mysqli_real_escape_string($conn,$_POST['password']); 
+        $password = mysqli_real_escape_string($conn, SHA1($_POST['password'])); 
 
         //Checks if login is valid
         $sql = "SELECT * FROM users WHERE email = '$email' and password = '$password'";

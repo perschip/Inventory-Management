@@ -102,8 +102,11 @@ if(isset($_GET['error']) && $_GET['error'] == 1) { ?>
                         <td>High School</td>
                 <?php 
                     }
+
+                    if($permission_level == 3 or $permission_level == 4) {
                 ?>
                 <td><a href="edit_user.php?id=<?php echo $id?>"><button type=submit>Edit</button></a> <a href="deleteUser.php?id=<?php echo $id?>"><button type=submit>Delete</button></a></td>	
+                <?php } ?>
             </tr>  
         <?php  
             };  
